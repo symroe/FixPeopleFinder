@@ -12,3 +12,9 @@ if (document.location.search == "?party") {
     el.attr('src', "http://partyhatify.herokuapp.com/?src=" + orig_src);
   })
 }
+
+var query_str = $('#query').val().trim();
+var correct_result = $('.search-result>:contains("'+query_str+'")').parent();
+var tmp_result = correct_result.clone()
+correct_result.remove();
+correct_result.insertAfter($('.pagination'))
